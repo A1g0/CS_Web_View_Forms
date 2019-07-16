@@ -37,8 +37,8 @@ namespace Web_View_Form
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 720);
-            this.Name = "WindowBrwz_20190716";
-            this.Text = "WindowBrwz_20190716";
+            this.Name = "WindowBrwz_20190716_Fix2";
+            this.Text = "WindowBrwz_20190716_FIx2";
             this.ResumeLayout(false);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
