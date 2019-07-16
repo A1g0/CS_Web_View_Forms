@@ -1,4 +1,7 @@
 ﻿using System.Windows.Forms;
+using System.IO;
+using System.Net;
+
 
 namespace Web_View_Form
 {
@@ -34,11 +37,28 @@ namespace Web_View_Form
             // 
             // Form1
             // 
+
+
+            int X = 1280, Y = 720;
+
+            //サイズを読み込む
+            string CD = System.Environment.CurrentDirectory;
+            string Scale_data = File.OpenText(CD + @"\Scale.txt").ReadToEnd();
+
+            string[] Scale_array = Scale_data.Split('\n');
+
+            //XY変換
+            if (Scale_array.Length == 2)
+            {
+                X = int.Parse(Scale_array[0].Replace("Xsize:", string.Empty));
+                Y = int.Parse(Scale_array[1].Replace("Ysize:", string.Empty));
+            }
+
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 720);
-            this.Name = "WindowBrwz_20190716_Fix3";
-            this.Text = "WindowBrwz_20190716_FIx3";
+            this.ClientSize = new System.Drawing.Size(X, Y);
+            this.Name = "WindowBrwz_20190716_Fix4";
+            this.Text = "WindowBrwz_20190716_FIx4";
             this.ResumeLayout(false);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
