@@ -30,17 +30,17 @@ namespace Web_View_Form
 
             int X = 1280, Y = 720;
 
-            ////サイズを読み込む
-            //string Scale_data = File.OpenText(CD + @"\Scale.txt").ReadToEnd();
+            //サイズを読み込む
+            string Scale_data = File.OpenText(CD + @"\Scale.txt").ReadToEnd();
 
-            //string[] Scale_array = Scale_data.Split('\n');
+            string[] Scale_array = Scale_data.Split('\n');
 
-            ////XY変換
-            //if (Scale_array.Length == 2)
-            //{
-            //    X = int.Parse(Scale_array[0].Replace("Xsize:", string.Empty));
-            //    Y = int.Parse(Scale_array[1].Replace("Ysize:", string.Empty));
-            //}
+            //XY変換
+            if (Scale_array.Length == 2)
+            {
+                X = int.Parse(Scale_array[0].Replace("Xsize:", string.Empty));
+                Y = int.Parse(Scale_array[1].Replace("Ysize:", string.Empty));
+            }
 
             this.Size = new Size(X,Y);
             this.Version.Text = "20190716_FIx4";

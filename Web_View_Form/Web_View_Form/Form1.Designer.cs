@@ -57,7 +57,7 @@ namespace Web_View_Form
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Form1";
-            this.Text = "WindowBrwz_20190716_FIx4";
+            this.Text = "WindowBrwz_20190716_FIx5";
             this.ResumeLayout(false);
 
         }
