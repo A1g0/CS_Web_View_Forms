@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Web_View_Form
 {
@@ -27,10 +28,29 @@ namespace Web_View_Form
 
             if (override_address != "null") address = override_address;
 
+            int X = 1280, Y = 720;
+
+            ////サイズを読み込む
+            //string Scale_data = File.OpenText(CD + @"\Scale.txt").ReadToEnd();
+
+            //string[] Scale_array = Scale_data.Split('\n');
+
+            ////XY変換
+            //if (Scale_array.Length == 2)
+            //{
+            //    X = int.Parse(Scale_array[0].Replace("Xsize:", string.Empty));
+            //    Y = int.Parse(Scale_array[1].Replace("Ysize:", string.Empty));
+            //}
+
+            this.Size = new Size(X,Y);
+            this.Version.Text = "20190716_FIx4";
 
             var browser = new ChromiumWebBrowser(address);
+            browser.Size = new Size(X, Y);
+            browser.Padding = new Padding(0,0,0,0);
+
             Controls.Add(browser);
-            browser.Dock = DockStyle.Fill;
+            browser.Dock = DockStyle.Top;
         }
     }
 }
